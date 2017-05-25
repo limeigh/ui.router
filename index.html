@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body ng-app="hello" style="background: #39c3e4">
+  <div ui-view></div>
+</body>
+</html>
+<script src="../node_modules/angular/angular.js"></script>
+<script src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="./goods/goodsCtrl.js"></script>
+<script src="./detail/detailCtrl.js"></script>
+
+<script>
+  angular.module('hello', ['ui.router','hello.goods','hello.detail'])
+  .config(['$stateProvider',function ($stateProvider) {
+     $stateProvider
+     .state({
+       name:'tab',
+       url: '/tab',
+       templateUrl:'./tab/tab.html',
+       // template:
+       // contgroller
+     })
+     .state({
+      name: 'tab.goodslist',
+      url: '/goods',
+     templateUrl: './goods/goods.html',
+      controller : 'goodsCtrl'
+     })
+     .state({
+      name:'detail',
+
+      // 如果是 /detail 地址栏中地址要与 /detail匹配
+      // 如果是 /detail/:myid ,  /detail/1212
+
+      url: '/detail/:myid',
+      templateUrl: './detail/detail.html',
+      controller: 'detailCtrl'
+     })
+
+     //  #!/tab
+     //  #!/tab/goods
+  }])
+</script>

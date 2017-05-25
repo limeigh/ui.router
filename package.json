@@ -1,0 +1,15 @@
+{
+  "name": "ui.router",
+  "version": "1.0.0",
+  "description": "",
+  "main": "\u001b[",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dhq",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-ui-router": "^1.0.3"
+  }
+}
